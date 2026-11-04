@@ -99,3 +99,12 @@ Laboratuvar DNS çözümleyicisi: [LAB_DNS_IP]
 ```
 
 Bu yer tutucular ağ planını kaydetmeye yarar; ARP/DNS sahteciliği, trafik yakalama veya yönlendirme adımlarıyla birlikte kullanılmak üzere bir komut dizisi sağlamaz.
+
+## Gönderdiğin listeden güvenli, salt-okunur komutlar
+
+Bu iki komut yerel arayüz bilgilerini ve IPv4 yönlendirme ayarının mevcut değerini görüntüler; ayar değiştirmez.
+
+```bash
+ifconfig
+cat /proc/sys/net/ipv4/ip_forward
+```
