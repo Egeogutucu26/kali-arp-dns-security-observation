@@ -69,3 +69,18 @@ ifconfig
 ```
 
 `netdiscover` gibi ağ keşif araçları başka cihazlarda sorgu oluşturabilir; ARP spoofing, DNS spoofing, paket yakalama ve trafik yönlendirme modülleri ise üçüncü taraf trafiğine müdahale edebilir. Bu nedenle bu depoda bunlara ilişkin çalıştırma komutları yayımlanmamıştır. Gereksinim duyulan her test için yazılı izin ve yalıtılmış laboratuvar kullanın.
+
+## 9. ve 10. bölüm: ARP/DNS riskleri — savunma özeti
+
+Bu ders notlarında ağ keşfi, IP yönlendirme, ARP tablosunun manipülasyonu, trafik gözlemi ve DNS yanıtlarının değiştirilmesi gibi riskli konular ele alınmaktadır. Bu teknikler izinsiz kullanıldığında trafiğin yönünü değiştirebilir veya özel ağ verilerini açığa çıkarabilir. Bu nedenle burada çalıştırılabilir saldırı zinciri, eksik parametre tamamlama ya da trafik yakalama yönergeleri yayımlanmamıştır.
+
+### Güvenli değerlendirme yaklaşımı
+
+- Deneyleri yalnızca internetten ve üretim ağlarından yalıtılmış, sahibine ait sanal makinelerde yürütün.
+- Laboratuvar trafiği için sentetik veri kullanın; gerçek kullanıcıların paketlerini veya kimlik bilgilerini toplamayın.
+- ARP komşu tablosu ve DNS yapılandırmasında beklenmeyen değişiklikleri kayıtlı, yetkili temel durumla karşılaştırın.
+- IP forwarding ayarını yalnızca okuyarak inceleyin; bu depodaki tanılama komutları sistem ayarını değiştirmez.
+- Savunmada ağ segmentasyonu, uygun anahtarlarda DHCP snooping / Dynamic ARP Inspection, güvenilir DNS yapılandırması ve TLS/HTTPS doğrulamasını değerlendirin.
+- Şüpheli bulguları ağ sahibine veya yetkili olay müdahale ekibine iletin.
+
+Bu proje bir istismar kılavuzu değil; ARP/DNS risklerini tanıma ve azaltma üzerine eğitim notudur. Herhangi bir ağda test için önceden açık izin ve yazılı kapsam gerekir.
