@@ -84,3 +84,18 @@ Bu ders notlarında ağ keşfi, IP yönlendirme, ARP tablosunun manipülasyonu, 
 - Şüpheli bulguları ağ sahibine veya yetkili olay müdahale ekibine iletin.
 
 Bu proje bir istismar kılavuzu değil; ARP/DNS risklerini tanıma ve azaltma üzerine eğitim notudur. Herhangi bir ağda test için önceden açık izin ve yazılı kapsam gerekir.
+
+## Laboratuvar topolojisi şablonu
+
+Aşağıdaki alanlar yalnızca yetkili ve yalıtılmış laboratuvarı belgelemek içindir; çalıştırılabilir komut değildir.
+
+```text
+Laboratuvar arayüzü: [LAB_ARAYÜZÜ]
+Yetkili laboratuvar ağı/CIDR: [LAB_AĞI/CIDR]
+Test istemcisi: [TEST_İSTEMCİSİ_IP]
+Laboratuvar ağ geçidi: [LAB_AĞ_GEÇİDİ_IP]
+Laboratuvar DNS çözümleyicisi: [LAB_DNS_IP]
+İzin/kapsam notu: [YAZILI_İZİN_VE_TEST_KAPSAMI]
+```
+
+Bu yer tutucular ağ planını kaydetmeye yarar; ARP/DNS sahteciliği, trafik yakalama veya yönlendirme adımlarıyla birlikte kullanılmak üzere bir komut dizisi sağlamaz.
