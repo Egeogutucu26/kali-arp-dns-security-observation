@@ -40,3 +40,32 @@ Bu depoda ARP/DNS sahteciliği uygulama, trafiği başka bir sisteme yönlendirm
 ## Etik ve sorumluluk
 
 İçerik eğitim amaçlıdır ve bir güvenlik ürünü değildir. Herhangi bir testten önce sistem sahibinden açık izin ve net kapsam alın. Yetkisiz izleme veya müdahaleden doğabilecek sonuçlardan kullanıcı sorumludur.
+
+## Güvenli terminal tanılama komutları
+
+Aşağıdaki komutlar yerel arayüz, rota, komşu tablosu, yönlendirme ayarı ve DNS yapılandırmasını **görüntüler**; ağ trafiğini başka sisteme yönlendirmez veya yakalamaz. Yalnızca yetkili laboratuvar ortamında kullanın.
+
+```bash
+# Ağ arayüzleri ve IP adresleri
+ip -br address
+
+# Varsayılan ağ geçidi ve rotalar
+ip route
+
+# İşletim sisteminin bildiği yerel ARP/komşu tablosu
+ip neigh show
+
+# IPv4 forwarding ayarının mevcut değerini oku (değişiklik yapmaz)
+sysctl net.ipv4.ip_forward
+
+# DNS çözümleyici durumunu görüntüle (systemd-resolved bulunan sistemlerde)
+resolvectl status
+
+# Örnek bir alan adı için DNS çözümlemesini sorgula
+dig example.com
+
+# Eski net-tools paketi kuruluysa arayüz bilgilerini görüntüle
+ifconfig
+```
+
+`netdiscover` gibi ağ keşif araçları başka cihazlarda sorgu oluşturabilir; ARP spoofing, DNS spoofing, paket yakalama ve trafik yönlendirme modülleri ise üçüncü taraf trafiğine müdahale edebilir. Bu nedenle bu depoda bunlara ilişkin çalıştırma komutları yayımlanmamıştır. Gereksinim duyulan her test için yazılı izin ve yalıtılmış laboratuvar kullanın.
